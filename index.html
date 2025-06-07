@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gino Rodriguez - Desarrollador Full Stack Junior</title>
+
+    <!-- Meta tags para SEO mejorados -->
+    <meta name="description"
+        content="Gino Rodriguez - Desarrollador Full Stack Junior especializado en React, Node.js, Python y PHP. Creando soluciones web innovadoras y experiencias digitales únicas.">
+    <meta name="keywords"
+        content="desarrollador full stack, react, nodejs, python, php, javascript, html, css, portfolio, gino rodriguez">
+    <meta name="author" content="Gino Polinario Rodriguez Pesantez">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph para redes sociales -->
+    <meta property="og:title" content="Gino Rodriguez - Desarrollador Full Stack Junior">
+    <meta property="og:description"
+        content="Portafolio profesional de desarrollo web - Especialista en tecnologías modernas">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ginorodriguez.dev">
+    <meta property="og:image" content="./imagen/FotoCV.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Gino Rodriguez - Desarrollador Full Stack Junior">
+    <meta name="twitter:description" content="Portafolio profesional de desarrollo web">
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="./manifest.json">
+    <meta name="theme-color" content="#6366f1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Gino Portfolio">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+    <link rel="apple-touch-icon" href="./assets/icons/icon-192x192.png">
+
+    <!-- Preconnect para mejor performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS Libraries -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./css/variables.css">
+    <link rel="stylesheet" href="./css/components.css">
+    <link rel="stylesheet" href="./css/responsive.css">
+
+    <!-- Preload críticos -->
+    <link rel="preload" href="./js/main.js" as="script">
+    <link rel="preload" href="./imagen/FotoCV.png" as="image">
+</head>
+
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loader"></div>
+        <div class="loading-text">Cargando portafolio...</div>
+    </div>
+
+    <!-- Enhanced Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-custom fixed-top" id="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="#home" aria-label="Gino Rodriguez Portfolio">
+                <i class="fas fa-code me-2" aria-hidden="true"></i>
+                Gino Rodriguez
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home" aria-label="Ir a inicio">
+                            <i class="fas fa-home me-1" aria-hidden="true"></i>Inicio
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about" aria-label="Ir a sobre mí">
+                            <i class="fas fa-user me-1" aria-hidden="true"></i>Sobre Mí
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects" aria-label="Ir a proyectos">
+                            <i class="fas fa-laptop-code me-1" aria-hidden="true"></i>Proyectos
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact" aria-label="Ir a contacto">
+                            <i class="fas fa-envelope me-1" aria-hidden="true"></i>Contacto
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-bg-elements" aria-hidden="true">
+            <div class="floating-shape shape-1"></div>
+            <div class="floating-shape shape-2"></div>
+            <div class="floating-shape shape-3"></div>
+            <div class="floating-shape shape-4"></div>
+        </div>
+
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 hero-content">
+                    <h1 class="hero-title fade-in-up">
+                        ¡Hola! Soy <br>
+                        <span class="text-turquoise">Gino Rodriguez</span>
+                    </h1>
+                    <h2 class="hero-subtitle fade-in-up fade-in-up-delay-1">
+                        <span class="typing-text" id="typingText">Desarrollador Full Stack Junior</span>
+                    </h2>
+                    <p class="hero-description fade-in-up fade-in-up-delay-2">
+                        Apasionado por crear experiencias web increíbles y soluciones tecnológicas innovadoras.
+                        Especializado en desarrollo frontend y backend con tecnologías modernas como React, Node.js,
+                        Python y PHP.
+                    </p>
+                    <a href="#projects" class="btn-hero fade-in-up fade-in-up-delay-3" aria-label="Ver mis proyectos">
+                        <i class="fas fa-rocket me-2" aria-hidden="true"></i>
+                        Ver Mis Proyectos
+                    </a>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <div class="profile-container" data-aos="zoom-in" data-aos-delay="500">
+                        <div class="profile-glow" aria-hidden="true"></div>
+                        <img src="./imagen/FotoCV.png" alt="Gino Rodriguez - Desarrollador Full Stack"
+                            class="profile-img" loading="eager">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section section-padding">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Sobre Mí</h2>
+            <div class="row">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <h3 class="mb-4 text-gradient">Mi Historia</h3>
+                    <p class="about-content">
+                        Soy un desarrollador junior apasionado por la tecnología y la innovación. Desde que descubrí
+                        la programación, he estado constantemente aprendiendo de manera autónoma y mejorando mis
+                        habilidades para crear
+                        soluciones web efectivas y atractivas.
+                    </p>
+                    <p class="about-content">
+                        Mi enfoque se centra en escribir código limpio, crear interfaces de usuario intuitivas y
+                        resolver problemas complejos de manera creativa. Me encanta trabajar en equipo y siempre
+                        estoy dispuesto a enfrentar nuevos desafíos.
+                    </p>
+                    <p class="about-content">
+                        Cuando no estoy programando, disfruto aprender nuevas tecnologías, contribuir a proyectos
+                        de código abierto y mantenerme actualizado con las últimas tendencias del desarrollo web.
+                    </p>
+
+                    <!-- Stats -->
+                    <div class="stats-container" data-aos="fade-up" data-aos-delay="200">
+                        <div class="row">
+                            <div class="col-4 stat-item">
+                                <span class="counter" data-target="10">0</span>
+                                <p class="stat-label">Proyectos</p>
+                            </div>
+                            <div class="col-4 stat-item">
+                                <span class="counter" data-target="4">0</span>
+                                <p class="stat-label">Años Exp.</p>
+                            </div>
+                            <div class="col-4 stat-item">
+                                <span class="counter" data-target="100">0</span>
+                                <p class="stat-label">% Dedicación</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+                            <div class="skill-item">
+                                <i class="fab fa-html5 skill-icon" aria-hidden="true"></i>
+                                <h5 class="skill-title">HTML5 & CSS3</h5>
+                                <p class="skill-description">Estructura y diseño web moderno con semántica avanzada</p>
+                                <div class="skill-progress">
+                                    <div class="progress-fill" data-width="95"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                            <div class="skill-item">
+                                <i class="fab fa-js-square skill-icon" aria-hidden="true"></i>
+                                <h5 class="skill-title">JavaScript</h5>
+                                <p class="skill-description">Programación frontend dinámico y moderno</p>
+                                <div class="skill-progress">
+                                    <div class="progress-fill" data-width="90"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+                            <div class="skill-item">
+                                <i class="fab fa-react skill-icon" aria-hidden="true"></i>
+                                <h5 class="skill-title">React</h5>
+                                <p class="skill-description">Aplicaciones web interactivas y SPA</p>
+                                <div class="skill-progress">
+                                    <div class="progress-fill" data-width="75"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+                            <div class="skill-item">
+                                <i class="fas fa-server skill-icon" aria-hidden="true"></i>
+                                <h5 class="skill-title">Backend</h5>
+                                <p class="skill-description">Node.js, APIs REST y bases de datos</p>
+                                <div class="skill-progress">
+                                    <div class="progress-fill" data-width="70"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
+                            <div class="skill-item">
+                                <i class="fab fa-php skill-icon" aria-hidden="true"></i>
+                                <h5 class="skill-title">PHP & MySQL</h5>
+                                <p class="skill-description">Desarrollo backend y gestión de bases de datos</p>
+                                <div class="skill-progress">
+                                    <div class="progress-fill" data-width="85"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="600">
+                            <div class="skill-item">
+                                <i class="fab fa-python skill-icon" aria-hidden="true"></i>
+                                <h5 class="skill-title">Python</h5>
+                                <p class="skill-description">Programación backend y automatización</p>
+                                <div class="skill-progress">
+                                    <div class="progress-fill" data-width="80"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section section-padding">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Mis Proyectos</h2>
+            <div class="row">
+                <!-- Project 4 - Calculadora Hipotecaria -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-card">
+                        <div class="project-img">
+                            <i class="fas fa-calculator" aria-hidden="true"></i>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Calculadora Hipotecaria</h3>
+                            <p class="project-description">
+                                Aplicación web que simula el trabajo de un analista de créditos bancario
+                                con cálculos precisos y reportes detallados.
+                            </p>
+                            <div class="project-tech-container">
+                                <span class="project-tech">HTML5</span>
+                                <span class="project-tech">CSS3</span>
+                                <span class="project-tech">JavaScript</span>
+                                <span class="project-tech">Bootstrap</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://rpgrodri2001.github.io/Calculadora_Hipotecaria/"
+                                    class="btn-project btn-demo" target="_blank" rel="noopener noreferrer"
+                                    aria-label="Ver demo de la calculadora hipotecaria">Ver Demo</a>
+                                <a href="https://github.com/RPGrodri2001/Calculadora_Hipotecaria.git"
+                                    class="btn-project btn-code" target="_blank" rel="noopener noreferrer"
+                                    aria-label="Ver código de la calculadora hipotecaria">Código</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 - Calendario de Vacaciones -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-card">
+                        <div class="project-img">
+                            <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Calendario de Vacaciones</h3>
+                            <p class="project-description">
+                                Sistema de gestión de vacaciones para el personal del Hospital Darío Machuca Palacios,
+                                con interfaz intuitiva y gestión de solicitudes.
+                            </p>
+                            <div class="project-tech-container">
+                                <span class="project-tech">HTML5</span>
+                                <span class="project-tech">CSS3</span>
+                                <span class="project-tech">JavaScript</span>
+                                <span class="project-tech">Bootstrap</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://rpgrodri2001.github.io/Calendario_de_Vacaciones/"
+                                    class="btn-project btn-demo" target="_blank" rel="noopener noreferrer"
+                                    aria-label="Ver demo del calendario de vacaciones">Ver Demo</a>
+                                <a href="https://github.com/RPGrodri2001/Calendario_de_Vacaciones.git"
+                                    class="btn-project btn-code" target="_blank" rel="noopener noreferrer"
+                                    aria-label="Ver código del calendario de vacaciones">Código</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 1 - E-commerce React -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="project-card">
+                        <div class="project-img">
+                            <i class="fas fa-shopping-cart" aria-hidden="true"></i>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">E-commerce React</h3>
+                            <p class="project-description">
+                                Plataforma de comercio electrónico completa con carrito de compras, autenticación de
+                                usuarios y pasarela de pagos integrada.
+                            </p>
+                            <div class="project-tech-container">
+                                <span class="project-tech">React</span>
+                                <span class="project-tech">Node.js</span>
+                                <span class="project-tech">MongoDB</span>
+                                <span class="project-tech">Stripe</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="." class="btn-project btn-demo"
+                                    aria-label="Ver demo del proyecto e-commerce">Ver Demo</a>
+                                <a href="#" class="btn-project btn-code"
+                                    aria-label="Ver código del proyecto e-commerce">Código</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 - Gestor de Tareas -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="project-card">
+                        <div class="project-img">
+                            <i class="fas fa-tasks" aria-hidden="true"></i>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Gestor de Tareas</h3>
+                            <p class="project-description">
+                                Aplicación para gestión de tareas con funcionalidad de arrastrar y soltar,
+                                categorías personalizables y sistema de recordatorios.
+                            </p>
+                            <div class="project-tech-container">
+                                <span class="project-tech">Vue.js</span>
+                                <span class="project-tech">Firebase</span>
+                                <span class="project-tech">Tailwind CSS</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="btn-project btn-demo" aria-label="Ver demo del gestor de tareas">Ver
+                                    Demo</a>
+                                <a href="#" class="btn-project btn-code"
+                                    aria-label="Ver código del gestor de tareas">Código</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 - Buscador de Películas -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+                    <div class="project-card">
+                        <div class="project-img">
+                            <i class="fas fa-film" aria-hidden="true"></i>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Buscador de Películas</h3>
+                            <p class="project-description">
+                                Aplicación que consume API de películas con filtros avanzados,
+                                sistema de favoritos y recomendaciones personalizadas.
+                            </p>
+                            <div class="project-tech-container">
+                                <span class="project-tech">React</span>
+                                <span class="project-tech">Redux</span>
+                                <span class="project-tech">API REST</span>
+                                <span class="project-tech">TMDB API</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="btn-project btn-demo"
+                                    aria-label="Ver demo del buscador de películas">Ver Demo</a>
+                                <a href="#" class="btn-project btn-code"
+                                    aria-label="Ver código del buscador de películas">Código</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6 - Dashboard Analytics -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+                    <div class="project-card">
+                        <div class="project-img">
+                            <i class="fas fa-chart-line" aria-hidden="true"></i>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Dashboard Analytics</h3>
+                            <p class="project-description">
+                                Panel de control con métricas en tiempo real, gráficos interactivos
+                                y reportes personalizables para análisis de datos.
+                            </p>
+                            <div class="project-tech-container">
+                                <span class="project-tech">Vue.js</span>
+                                <span class="project-tech">D3.js</span>
+                                <span class="project-tech">Node.js</span>
+                                <span class="project-tech">PostgreSQL</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="btn-project btn-demo"
+                                    aria-label="Ver demo del dashboard analytics">Ver Demo</a>
+                                <a href="#" class="btn-project btn-code"
+                                    aria-label="Ver código del dashboard analytics">Código</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 7 - Dashboard Analytics -->
+                 <!-- Project 7 - Simulador de Votaciones Presidenciales -->
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="700">
+                <div class="project-card">
+                    <div class="project-img">
+                        <i class="fas fa-vote-yea" aria-hidden="true"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Simulador de Votaciones Presidenciales</h3>
+                        <p class="project-description">
+                            Simulador para votaciones presidenciales en México, especialmente adultos mayores, y promover el voto
+                        </p>
+                        <div class="project-tech-container">
+                            <span class="project-tech">HTML5</span>
+                            <span class="project-tech">CSS</span>
+                            <span class="project-tech">Bootstrap</span>
+                            <span class="project-tech">JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://rpgrodri2001.github.io/Web_VotaionesPresidenciales/"
+                               class="btn-project btn-demo"
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               aria-label="Ver demo del simulador de votaciones presidenciales">Ver Demo</a>
+                            <a href="https://github.com/RPGrodri2001/Web_VotaionesPresidenciales"
+                               class="btn-project btn-code"
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               aria-label="Ver código del simulador de votaciones presidenciales">Código</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 8 - Simulador de Votaciones Jurídicas -->
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="800">
+                <div class="project-card">
+                    <div class="project-img">
+                        <i class="fas fa-balance-scale" aria-hidden="true"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Simulador de Votaciones Jurídicas</h3>
+                        <p class="project-description">
+                            Sistema web para votaciones jurídicas con nominación a 9 candidatos
+                        </p>
+                        <div class="project-tech-container">
+                            <span class="project-tech">HTML5</span>
+                            <span class="project-tech">CSS</span>
+                            <span class="project-tech">Bootstrap</span>
+                            <span class="project-tech">JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://rpgrodri2001.github.io/SimulacionDE_Votaciones_Politicas_Mexico/"
+                               class="btn-project btn-demo"
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               aria-label="Ver demo del simulador de votaciones jurídicas">Ver Demo</a>
+                            <a href="https://github.com/RPGrodri2001/SimulacionDE_Votaciones_Politicas_Mexico"
+                               class="btn-project btn-code"
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               aria-label="Ver código del simulador de votaciones jurídicas">Código</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 9 - Quiz de Medicina -->
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="900">
+                <div class="project-card">
+                    <div class="project-img">
+                        <i class="fas fa-file-medical-alt" aria-hidden="true"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Quiz de Medicina</h3>
+                        <p class="project-description">
+                            Simulador de prueba online para tomar lecciones de aprendizaje sobre medicina
+                        </p>
+                        <div class="project-tech-container">
+                            <span class="project-tech">HTML5</span>
+                            <span class="project-tech">CSS</span>
+                            <span class="project-tech">Bootstrap</span>
+                            <span class="project-tech">JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://rpgrodri2001.github.io/Quiz_leccionDeMedicina/"
+                               class="btn-project btn-demo"
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               aria-label="Ver demo del quiz de medicina">Ver Demo</a>
+                            <a href="https://github.com/RPGrodri2001/Quiz_leccionDeMedicina"
+                               class="btn-project btn-code"
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               aria-label="Ver código del quiz de medicina">Código</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 10 - Juego Rebotin -->
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="1000">
+                <div class="project-card">
+                    <div class="project-img">
+                        <i class="fas fa-gamepad" aria-hidden="true"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Juego Rebotin</h3>
+                        <p class="project-description">
+                            Juego basado en Arkanoid, donde una pelota rebota y destruye bloques
+                        </p>
+                        <div class="project-tech-container">
+                            <span class="project-tech">HTML5</span>
+                            <span class="project-tech">CSS</span>
+                            <span class="project-tech">Bootstrap</span>
+                            <span class="project-tech">JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://rpgrodri2001.github.io/JuegoRebotin/"
+                               class="btn-project btn-demo"
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               aria-label="Ver demo del juego Rebotin">Ver Demo</a>
+                            <a href="https://github.com/RPGrodri2001/JuegoRebotin"
+                               class="btn-project btn-code"
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               aria-label="Ver código del juego Rebotin">Código</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 11 - Juego de Carreras 2D -->
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="1100">
+                <div class="project-card">
+                    <div class="project-img">
+                        <i class="fas fa-car" aria-hidden="true"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Juego de Carreras 2D</h3>
+                        <p class="project-description">
+                            Juego online de carreras 2D, estilo old school con controles clásicos
+                        </p>
+                        <div class="project-tech-container">
+                            <span class="project-tech">HTML5</span>
+                            <span class="project-tech">CSS</span>
+                            <span class="project-tech">Bootstrap</span>
+                            <span class="project-tech">JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://rpgrodri2001.github.io/JuegoCarreras2D/"
+                               class="btn-project btn-demo"
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               aria-label="Ver demo del juego de carreras 2D">Ver Demo</a>
+                            <a href="https://github.com/RPGrodri2001/JuegoCarreras2D"
+                               class="btn-project btn-code"
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               aria-label="Ver código del juego de carreras 2D">Código</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- cIERRE DE PROYECTOS -->
+            </div>
+
+            <div class="text-center mt-5" data-aos="fade-up">
+                <a href="https://github.com/RPGrodri2001" class="btn btn-primary btn-lg hover-lift" target="_blank"
+                    rel="noopener noreferrer" aria-label="Ver todos los proyectos en GitHub">
+                    <i class="fab fa-github me-2" aria-hidden="true"></i>
+                    Ver Todos en GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section section-padding">
+        <div class="container">
+            <div class="contact-intro" data-aos="fade-up">
+                <h2 class="section-title" style="color: white;">¡Trabajemos Juntos!</h2>
+                <p class="contact-subtitle">
+                    ¿Tienes un proyecto en mente o quieres colaborar? Me encantaría conocer tu idea
+                    y ayudarte a convertirla en realidad digital.
+                </p>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4" data-aos="fade-right" data-aos-delay="100">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope contact-icon" aria-hidden="true"></i>
+                        <h4 class="contact-title">Email</h4>
+                        <p class="contact-info">gino.rodri2001@outlook.com</p>
+                        <a href="mailto:gino.rodri2001@outlook.com?subject=Consulta%20desde%20el%20portafolio&body=Hola%20Gino,%20me%20interesa%20trabajar%20contigo."
+                            class="btn-contact" aria-label="Enviar email a Gino Rodriguez">
+                            Enviar Email
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="contact-item">
+                        <i class="fas fa-phone-alt contact-icon" aria-hidden="true"></i>
+                        <h4 class="contact-title">Teléfono</h4>
+                        <p class="contact-info">+593 99 086 0250</p>
+                        <a href="tel:+593990860250" class="btn-contact" aria-label="Llamar a Gino Rodriguez">
+                            Llamar Ahora
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4" data-aos="fade-left" data-aos-delay="300">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt contact-icon" aria-hidden="true"></i>
+                        <h4 class="contact-title">Ubicación</h4>
+                        <p class="contact-info">La Troncal, Cañar, Ecuador</p>
+                        <a href="https://www.google.com/maps/place/La+Troncal,+Ca%C3%B1ar,+Ecuador" target="_blank"
+                            rel="noopener noreferrer" class="btn-contact" aria-label="Ver ubicación en Google Maps">
+                            Ver en Mapa
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="row">
+                <div class="col-lg-8 mx-auto" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="contact-form">
+                        <h3 class="form-title">Envíame un Mensaje</h3>
+                        <form id="contactForm" novalidate>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="name" class="visually-hidden">Nombre completo</label>
+                                    <input type="text" class="form-control" id="name" name="name"
+                                        placeholder="Nombre completo" required aria-describedby="nameError">
+                                    <div id="nameError" class="invalid-feedback"></div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="email" class="visually-hidden">Email</label>
+                                    <input type="email" class="form-control" id="email" name="email"
+                                        placeholder="tu@email.com" required aria-describedby="emailError">
+                                    <div id="emailError" class="invalid-feedback"></div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="subject" class="visually-hidden">Asunto</label>
+                                <input type="text" class="form-control" id="subject" name="subject"
+                                    placeholder="Asunto del mensaje" aria-describedby="subjectError">
+                                <div id="subjectError" class="invalid-feedback"></div>
+                            </div>
+                            <div class="mb-4">
+                                <label for="message" class="visually-hidden">Mensaje</label>
+                                <textarea class="form-control" rows="5" id="message" name="message"
+                                    placeholder="Cuéntame sobre tu proyecto o idea..." required
+                                    aria-describedby="messageError"></textarea>
+                                <div id="messageError" class="invalid-feedback"></div>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn-submit" id="submitBtn">
+                                    <i class="fas fa-paper-plane me-2" aria-hidden="true"></i>
+                                    <span class="btn-text">Enviar Mensaje</span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="social-links" data-aos="fade-up">
+                <a href="https://github.com/RPGrodri2001" target="_blank" rel="noopener noreferrer"
+                    aria-label="Perfil de GitHub de Gino Rodriguez">
+                    <i class="fab fa-github" aria-hidden="true"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/gino-polinario-rodriguez-pesantez-138619305/" target="_blank"
+                    rel="noopener noreferrer" aria-label="Perfil de LinkedIn de Gino Rodriguez">
+                    <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                </a>
+                <a href="https://www.instagram.com/ginodri2001/" target="_blank" rel="noopener noreferrer"
+                    aria-label="Perfil de Instagram de Gino Rodriguez">
+                    <i class="fab fa-instagram" aria-hidden="true"></i>
+                </a>
+                <a href="mailto:gino.rodri2001@outlook.com" aria-label="Enviar email a Gino Rodriguez">
+                    <i class="fas fa-envelope" aria-hidden="true"></i>
+                </a>
+            </div>
+            <p class="footer-text mb-2">© 2025 Gino Rodriguez. Todos los derechos reservados.</p>
+
+            <p class="footer-text mb-0">
+                Diseñado y desarrollado con
+                <i class="fas fa-heart footer-heart" aria-hidden="true"></i>
+                por <a href="https://github.com/RPGrodri2001" target="_blank" rel="noopener noreferrer"
+                    class="footer-github-link">Gino Rodriguez</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top-btn" id="scrollTopBtn" aria-label="Volver arriba">
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
+    </button>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
