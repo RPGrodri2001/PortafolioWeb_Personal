@@ -38,179 +38,81 @@
     <link rel="icon" type="image/x-icon" href="./favicon.ico">
     <link rel="apple-touch-icon" href="./assets/icons/icon-192x192.png">
 
-    <!-- OPTIMIZACIONES DE CARGA -->
+    <!-- 🚀 OPTIMIZACIONES DE CARGA -->
     <!-- Preconnect para mejor performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
 
     <!-- Preload de recursos críticos -->
-    <link rel="preload" href="css/variables.css" as="style">
-    <link rel="preload" href="css/components.css" as="style">
-    <link rel="preload" href="imagen/FotoCV.png" as="image">
-    <link rel="preload" href="js/main.js" as="script">
+    <link rel="preload" href="./css/variables.css" as="style">
+    <link rel="preload" href="./css/components.css" as="style">
+    <link rel="preload" href="./imagen/FotoCV.png" as="image">
 
-    <!-- CSS crítico inline -->
+    <!-- CSS crítico inline para evitar FOUC -->
     <style>
-        /* CSS CRÍTICO - Solo lo esencial para evitar FOUC */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Poppins', Arial, sans-serif;
-            line-height: 1.6;
-            background: #0f0f0f;
-            color: #fff;
-            overflow-x: hidden;
-        }
-        
-        /* Preloader optimizado */
-        .preloader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            transition: opacity 0.5s ease;
-        }
-        
-        .preloader.hidden {
-            opacity: 0;
-            pointer-events: none;
-        }
-        
-        .spinner {
-            width: 50px;
-            height: 50px;
-            border: 3px solid rgba(255,255,255,0.3);
-            border-top: 3px solid #fff;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin-bottom: 20px;
-        }
-        
-        .loading-text {
-            color: white;
-            font-size: 1.2rem;
-            font-weight: 500;
-            text-align: center;
-        }
-        
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        
-        /* Lazy loading */
-        .loading {
-            opacity: 0;
-            transform: translateY(30px);
-        }
-        
-        .loaded {
-            opacity: 1;
-            transform: translateY(0);
-            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        /* Loading screen original compatible */
-        .loading-screen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            transition: opacity 0.5s ease;
-        }
         
         .loading-screen.hidden {
             opacity: 0;
             pointer-events: none;
         }
-        
-        .loader {
-            width: 50px;
-            height: 50px;
-            border: 3px solid rgba(255,255,255,0.3);
-            border-top: 3px solid #fff;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin-bottom: 20px;
+                
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
+        
     </style>
 
-    <!-- Fonts con carga diferida -->
+    <!-- ⚡ FONTS OPTIMIZADAS (CARGA DIFERIDA) -->
     <link rel="preload" 
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" 
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" 
           as="style" 
           onload="this.onload=null;this.rel='stylesheet'">
     <noscript>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" 
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" 
               rel="stylesheet">
     </noscript>
 
-    <!-- CSS Libraries con carga diferida -->
+    <!-- 📦 BOOTSTRAP MÍNIMO (SOLO CSS, SIN JS PESADO) -->
     <link rel="preload" 
           href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" 
           as="style" 
           onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    </noscript>
+
+    <!-- 🎯 ICONOS ESENCIALES (SOLO LOS QUE USAS) -->
     <link rel="preload" 
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" 
           as="style" 
           onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preload" 
-          href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" 
-          as="style" 
-          onload="this.onload=null;this.rel='stylesheet'">
-
-    <!-- Fallback para CSS sin JavaScript -->
     <noscript>
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
     </noscript>
 
-    <!-- Custom CSS -->
+    <!-- ❌ ELIMINADO: AOS (demasiado pesado, lo reemplazaremos con CSS) -->
+    
+    <!-- TUS CSS ORIGINALES -->
     <link rel="stylesheet" href="./css/variables.css">
     <link rel="stylesheet" href="./css/components.css">
     <link rel="stylesheet" href="./css/responsive.css">
 
-    <!-- Prefetch DNS -->
+    <!-- DNS Prefetch -->
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
     <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
-    <link rel="dns-prefetch" href="//github.com">
 </head>
 
 <body>
-    <!-- PRELOADER OPTIMIZADO -->
-    <div class="preloader" id="preloader">
-        <div class="spinner"></div>
-        <div class="loading-text">Cargando portafolio...</div>
-    </div>
-
-    <!-- Loading Screen (mantengo compatibilidad con tu JS existente) -->
+    <!-- Loading Screen OPTIMIZADO -->
     <div class="loading-screen" id="loadingScreen">
         <div class="loader"></div>
         <div class="loading-text">Cargando portafolio...</div>
     </div>
 
     <!-- Enhanced Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-custom fixed-top loading" id="navbar">
+    <nav class="navbar navbar-expand-lg navbar-custom fixed-top" id="navbar">
         <div class="container">
             <a class="navbar-brand" href="#home" aria-label="Gino Rodriguez Portfolio">
                 <i class="fas fa-code me-2" aria-hidden="true"></i>
@@ -250,7 +152,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero-section loading fade-in">
+    <section id="home" class="hero-section">
         <div class="hero-bg-elements" aria-hidden="true">
             <div class="floating-shape shape-1"></div>
             <div class="floating-shape shape-2"></div>
@@ -261,29 +163,29 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6 hero-content">
-                    <h1 class="hero-title fade-in-up loading">
+                    <h1 class="hero-title fade-in-up">
                         ¡Hola! Soy <br>
                         <span class="text-turquoise">Gino Rodriguez</span>
                     </h1>
-                    <h2 class="hero-subtitle fade-in-up fade-in-up-delay-1 loading">
+                    <h2 class="hero-subtitle fade-in-up fade-in-up-delay-1">
                         <span class="typing-text" id="typingText">Desarrollador Full Stack Junior</span>
                     </h2>
-                    <p class="hero-description fade-in-up fade-in-up-delay-2 loading">
+                    <p class="hero-description fade-in-up fade-in-up-delay-2">
                         Apasionado por crear experiencias web increíbles y soluciones tecnológicas innovadoras.
                         Especializado en desarrollo frontend y backend con tecnologías modernas como React, Node.js,
                         Python y PHP.
                     </p>
-                    <a href="#projects" class="btn-hero fade-in-up fade-in-up-delay-3 loading" aria-label="Ver mis proyectos">
+                    <a href="#projects" class="btn-hero fade-in-up fade-in-up-delay-3" aria-label="Ver mis proyectos">
                         <i class="fas fa-rocket me-2" aria-hidden="true"></i>
                         Ver Mis Proyectos
                     </a>
                 </div>
                 <div class="col-lg-6 text-center">
-                    <div class="profile-container loading" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="profile-container" data-aos="zoom-in" data-aos-delay="500">
                         <div class="profile-glow" aria-hidden="true"></div>
                         <img src="./imagen/FotoCV.png" 
                              alt="Gino Rodriguez - Desarrollador Full Stack" 
-                             class="profile-img loading"
+                             class="profile-img"
                              loading="eager"
                              width="300"
                              height="300"
@@ -295,11 +197,11 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about-section section-padding loading slide-in-left">
+    <section id="about" class="about-section section-padding">
         <div class="container">
-            <h2 class="section-title loading" data-aos="fade-up">Sobre Mí</h2>
+            <h2 class="section-title" data-aos="fade-up">Sobre Mí</h2>
             <div class="row">
-                <div class="col-lg-6 loading" data-aos="fade-right">
+                <div class="col-lg-6" data-aos="fade-right">
                     <h3 class="mb-4 text-gradient">Mi Historia</h3>
                     <p class="about-content">
                         Soy un desarrollador junior apasionado por la tecnología y la innovación. Desde que descubrí
@@ -318,7 +220,7 @@
                     </p>
 
                     <!-- Stats -->
-                    <div class="stats-container loading" data-aos="fade-up" data-aos-delay="200">
+                    <div class="stats-container" data-aos="fade-up" data-aos-delay="200">
                         <div class="row">
                             <div class="col-4 stat-item">
                                 <span class="counter" data-target="10">0</span>
@@ -337,7 +239,7 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="row">
-                        <div class="col-md-6 loading" data-aos="fade-up" data-aos-delay="100">
+                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
                             <div class="skill-item">
                                 <i class="fab fa-html5 skill-icon" aria-hidden="true"></i>
                                 <h5 class="skill-title">HTML5 & CSS3</h5>
@@ -347,7 +249,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6 loading" data-aos="fade-up" data-aos-delay="200">
+                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
                             <div class="skill-item">
                                 <i class="fab fa-js-square skill-icon" aria-hidden="true"></i>
                                 <h5 class="skill-title">JavaScript</h5>
@@ -357,7 +259,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6 loading" data-aos="fade-up" data-aos-delay="300">
+                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
                             <div class="skill-item">
                                 <i class="fab fa-react skill-icon" aria-hidden="true"></i>
                                 <h5 class="skill-title">React</h5>
@@ -367,7 +269,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6 loading" data-aos="fade-up" data-aos-delay="400">
+                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
                             <div class="skill-item">
                                 <i class="fas fa-server skill-icon" aria-hidden="true"></i>
                                 <h5 class="skill-title">Backend</h5>
@@ -377,7 +279,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6 loading" data-aos="fade-up" data-aos-delay="500">
+                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
                             <div class="skill-item">
                                 <i class="fab fa-php skill-icon" aria-hidden="true"></i>
                                 <h5 class="skill-title">PHP & MySQL</h5>
@@ -387,7 +289,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6 loading" data-aos="fade-up" data-aos-delay="600">
+                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="600">
                             <div class="skill-item">
                                 <i class="fab fa-python skill-icon" aria-hidden="true"></i>
                                 <h5 class="skill-title">Python</h5>
@@ -404,13 +306,12 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="projects-section section-padding loading fade-in">
+    <section id="projects" class="projects-section section-padding">
         <div class="container">
-            <h2 class="section-title loading" data-aos="fade-up">Mis Proyectos</h2>
-            <div class="row projects-grid">
-                
+            <h2 class="section-title" data-aos="fade-up">Mis Proyectos</h2>
+            <div class="row">
                 <!-- Project 4 - Calculadora Hipotecaria -->
-                <div class="col-lg-4 col-md-6 loading" data-aos="fade-up" data-aos-delay="100">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
                     <div class="project-card">
                         <div class="project-img">
                             <i class="fas fa-calculator" aria-hidden="true"></i>
@@ -429,10 +330,10 @@
                             </div>
                             <div class="project-links">
                                 <a href="https://rpgrodri2001.github.io/Calculadora_Hipotecaria/"
-                                    class="btn-project btn-demo btn-primary" target="_blank" rel="noopener noreferrer"
+                                    class="btn-project btn-demo" target="_blank" rel="noopener noreferrer"
                                     aria-label="Ver demo de la calculadora hipotecaria">Ver Demo</a>
                                 <a href="https://github.com/RPGrodri2001/Calculadora_Hipotecaria.git"
-                                    class="btn-project btn-code btn-secondary" target="_blank" rel="noopener noreferrer"
+                                    class="btn-project btn-code" target="_blank" rel="noopener noreferrer"
                                     aria-label="Ver código de la calculadora hipotecaria">Código</a>
                             </div>
                         </div>
@@ -440,7 +341,7 @@
                 </div>
 
                 <!-- Project 5 - Calendario de Vacaciones -->
-                <div class="col-lg-4 col-md-6 loading" data-aos="fade-up" data-aos-delay="200">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
                     <div class="project-card">
                         <div class="project-img">
                             <i class="fas fa-calendar-alt" aria-hidden="true"></i>
@@ -459,10 +360,10 @@
                             </div>
                             <div class="project-links">
                                 <a href="https://rpgrodri2001.github.io/Calendario_de_Vacaciones/"
-                                    class="btn-project btn-demo btn-primary" target="_blank" rel="noopener noreferrer"
+                                    class="btn-project btn-demo" target="_blank" rel="noopener noreferrer"
                                     aria-label="Ver demo del calendario de vacaciones">Ver Demo</a>
                                 <a href="https://github.com/RPGrodri2001/Calendario_de_Vacaciones.git"
-                                    class="btn-project btn-code btn-secondary" target="_blank" rel="noopener noreferrer"
+                                    class="btn-project btn-code" target="_blank" rel="noopener noreferrer"
                                     aria-label="Ver código del calendario de vacaciones">Código</a>
                             </div>
                         </div>
@@ -470,7 +371,7 @@
                 </div>
 
                 <!-- Project 8 - Simulador de Votaciones Jurídicas -->
-                <div class="col-lg-4 col-md-6 loading" data-aos="fade-up" data-aos-delay="300">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
                     <div class="project-card">
                         <div class="project-img">
                             <i class="fas fa-balance-scale" aria-hidden="true"></i>
@@ -488,10 +389,10 @@
                             </div>
                             <div class="project-links">
                                 <a href="https://rpgrodri2001.github.io/SimulacionDE_Votaciones_Politicas_Mexico/"
-                                    class="btn-project btn-demo btn-primary" target="_blank" rel="noopener noreferrer"
+                                    class="btn-project btn-demo" target="_blank" rel="noopener noreferrer"
                                     aria-label="Ver demo del simulador de votaciones jurídicas">Ver Demo</a>
                                 <a href="https://github.com/RPGrodri2001/SimulacionDE_Votaciones_Politicas_Mexico"
-                                    class="btn-project btn-code btn-secondary" target="_blank" rel="noopener noreferrer"
+                                    class="btn-project btn-code" target="_blank" rel="noopener noreferrer"
                                     aria-label="Ver código del simulador de votaciones jurídicas">Código</a>
                             </div>
                         </div>
@@ -499,7 +400,7 @@
                 </div>
 
                 <!-- Project 9 - Quiz de Medicina -->
-                <div class="col-lg-4 col-md-6 loading" data-aos="fade-up" data-aos-delay="400">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
                     <div class="project-card">
                         <div class="project-img">
                             <i class="fas fa-file-medical-alt" aria-hidden="true"></i>
@@ -517,10 +418,10 @@
                             </div>
                             <div class="project-links">
                                 <a href="https://rpgrodri2001.github.io/Quiz_leccionDeMedicina/"
-                                    class="btn-project btn-demo btn-primary" target="_blank" rel="noopener noreferrer"
+                                    class="btn-project btn-demo" target="_blank" rel="noopener noreferrer"
                                     aria-label="Ver demo del quiz de medicina">Ver Demo</a>
                                 <a href="https://github.com/RPGrodri2001/Quiz_leccionDeMedicina"
-                                    class="btn-project btn-code btn-secondary" target="_blank" rel="noopener noreferrer"
+                                    class="btn-project btn-code" target="_blank" rel="noopener noreferrer"
                                     aria-label="Ver código del quiz de medicina">Código</a>
                             </div>
                         </div>
@@ -528,7 +429,7 @@
                 </div>
 
                 <!-- Project 11 - Juego de Carreras 2D -->
-                <div class="col-lg-4 col-md-6 loading" data-aos="fade-up" data-aos-delay="500">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
                     <div class="project-card">
                         <div class="project-img">
                             <i class="fas fa-car" aria-hidden="true"></i>
@@ -545,10 +446,10 @@
                                 <span class="project-tech">JavaScript</span>
                             </div>
                             <div class="project-links">
-                                <a href="https://rpgrodri2001.github.io/JuegoCarreras2D/" class="btn-project btn-demo btn-primary"
+                                <a href="https://rpgrodri2001.github.io/JuegoCarreras2D/" class="btn-project btn-demo"
                                     target="_blank" rel="noopener noreferrer"
                                     aria-label="Ver demo del juego de carreras 2D">Ver Demo</a>
-                                <a href="https://github.com/RPGrodri2001/JuegoCarreras2D" class="btn-project btn-code btn-secondary"
+                                <a href="https://github.com/RPGrodri2001/JuegoCarreras2D" class="btn-project btn-code"
                                     target="_blank" rel="noopener noreferrer"
                                     aria-label="Ver código del juego de carreras 2D">Código</a>
                             </div>
@@ -557,7 +458,7 @@
                 </div>
 
                 <!-- Project 12 - Aplicación web con Geolocalización -->
-                <div class="col-lg-4 col-md-6 loading" data-aos="fade-up" data-aos-delay="600">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
                     <div class="project-card">
                         <div class="project-img">
                             <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
@@ -578,9 +479,9 @@
                             </div>
                             <div class="project-links">
                                 <a href="https://rpgrodri2001.github.io/Ubicacion_TiempoReal/"
-                                    class="btn-project btn-demo btn-primary" target="_blank" rel="noopener noreferrer"
+                                    class="btn-project btn-demo" target="_blank" rel="noopener noreferrer"
                                     aria-label="Ver demo de la aplicación de geolocalización">Ver Demo</a>
-                                <a href="https://github.com/RPGrodri2001/Ubicacion_TiempoReal" class="btn-project btn-code btn-secondary" target="_blank" rel="noopener noreferrer"
+                                <a href="https://github.com/RPGrodri2001/Ubicacion_TiempoReal" class="btn-project btn-code" target="_blank" rel="noopener noreferrer"
                                     aria-label="Ver código de la aplicación de geolocalización">Código</a>
                             </div>
                         </div>
@@ -588,7 +489,7 @@
                 </div>
             </div>
 
-            <div class="text-center mt-5 loading" data-aos="fade-up">
+            <div class="text-center mt-5" data-aos="fade-up">
                 <a href="https://github.com/RPGrodri2001" class="btn btn-primary btn-lg hover-lift" target="_blank"
                     rel="noopener noreferrer" aria-label="Ver todos los proyectos en GitHub">
                     <i class="fab fa-github me-2" aria-hidden="true"></i>
@@ -599,9 +500,9 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact-section section-padding loading slide-in-left">
+    <section id="contact" class="contact-section section-padding">
         <div class="container">
-            <div class="contact-intro loading" data-aos="fade-up">
+            <div class="contact-intro" data-aos="fade-up">
                 <h2 class="section-title" style="color: white;">¡Trabajemos Juntos!</h2>
                 <p class="contact-subtitle">
                     ¿Tienes un proyecto en mente o quieres colaborar? Me encantaría conocer tu idea
@@ -610,88 +511,36 @@
             </div>
 
             <div class="row">
-                <div class="col-lg-4 loading" data-aos="fade-right" data-aos-delay="100">
+                <div class="col-lg-4" data-aos="fade-right" data-aos-delay="100">
                     <div class="contact-item">
                         <i class="fas fa-envelope contact-icon" aria-hidden="true"></i>
                         <h4 class="contact-title">Email</h4>
                         <p class="contact-info">gino.rodri2001@outlook.com</p>
                         <a href="mailto:gino.rodri2001@outlook.com?subject=Consulta%20desde%20el%20portafolio&body=Hola%20Gino,%20me%20interesa%20trabajar%20contigo."
-                            class="btn-contact btn-primary" aria-label="Enviar email a Gino Rodriguez">
+                            class="btn-contact" aria-label="Enviar email a Gino Rodriguez">
                             Enviar Email
                         </a>
                     </div>
                 </div>
-                <div class="col-lg-4 loading" data-aos="fade-up" data-aos-delay="200">
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
                     <div class="contact-item">
                         <i class="fas fa-phone-alt contact-icon" aria-hidden="true"></i>
                         <h4 class="contact-title">Teléfono</h4>
                         <p class="contact-info">+593 99 086 0250</p>
-                        <a href="tel:+593990860250" class="btn-contact btn-primary" aria-label="Llamar a Gino Rodriguez">
+                        <a href="tel:+593990860250" class="btn-contact" aria-label="Llamar a Gino Rodriguez">
                             Llamar Ahora
                         </a>
                     </div>
                 </div>
-                <div class="col-lg-4 loading" data-aos="fade-left" data-aos-delay="300">
+                <div class="col-lg-4" data-aos="fade-left" data-aos-delay="300">
                     <div class="contact-item">
                         <i class="fas fa-map-marker-alt contact-icon" aria-hidden="true"></i>
                         <h4 class="contact-title">Ubicación</h4>
                         <p class="contact-info">La Troncal, Cañar, Ecuador</p>
                         <a href="https://www.google.com/maps/place/La+Troncal,+Ca%C3%B1ar,+Ecuador" target="_blank"
-                            rel="noopener noreferrer" class="btn-contact btn-primary" aria-label="Ver ubicación en Google Maps">
+                            rel="noopener noreferrer" class="btn-contact" aria-label="Ver ubicación en Google Maps">
                             Ver en Mapa
                         </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Contact Form -->
-            <div class="row">
-                <div class="col-lg-8 mx-auto loading" data-aos="zoom-in" data-aos-delay="400">
-                    <div class="contact-form">
-                        <h3 class="form-title">Envíame un Mensaje</h3>
-                        <form id="contactForm" class="contact-form" novalidate>
-                            <div class="row">
-                                <div class="col-md-6 mb-3">
-                                    <div class="form-group">
-                                        <label for="name" class="visually-hidden">Nombre completo</label>
-                                        <input type="text" class="form-control" id="name" name="name"
-                                            placeholder="Nombre completo" required aria-describedby="nameError">
-                                        <div id="nameError" class="invalid-feedback"></div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <div class="form-group">
-                                        <label for="email" class="visually-hidden">Email</label>
-                                        <input type="email" class="form-control" id="email" name="email"
-                                            placeholder="tu@email.com" required aria-describedby="emailError">
-                                        <div id="emailError" class="invalid-feedback"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="mb-3">
-                                <div class="form-group">
-                                    <label for="subject" class="visually-hidden">Asunto</label>
-                                    <input type="text" class="form-control" id="subject" name="subject"
-                                        placeholder="Asunto del mensaje" aria-describedby="subjectError">
-                                    <div id="subjectError" class="invalid-feedback"></div>
-                                </div>
-                            </div>
-                            <div class="mb-4">
-                                <div class="form-group">
-                                    <label for="message" class="visually-hidden">Mensaje</label>
-                                    <textarea class="form-control" rows="5" id="message" name="message"
-                                        placeholder="Cuéntame sobre tu proyecto o idea..." required
-                                        aria-describedby="messageError"></textarea>
-                                    <div id="messageError" class="invalid-feedback"></div>
-                                </div>
-                            </div>
-                            <div class="text-center">
-                                <button type="submit" class="btn-submit btn-primary" id="submitBtn">
-                                    <i class="fas fa-paper-plane me-2" aria-hidden="true"></i>
-                                    <span class="btn-text">Enviar Mensaje</span>
-                                </button>
-                            </div>
-                        </form>
                     </div>
                 </div>
             </div>
@@ -699,9 +548,9 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer loading">
+    <footer class="footer">
         <div class="container">
-            <div class="social-links loading" data-aos="fade-up">
+            <div class="social-links" data-aos="fade-up">
                 <a href="https://github.com/RPGrodri2001" target="_blank" rel="noopener noreferrer"
                     aria-label="Perfil de GitHub de Gino Rodriguez">
                     <i class="fab fa-github" aria-hidden="true"></i>
@@ -734,38 +583,27 @@
         <i class="fas fa-arrow-up" aria-hidden="true"></i>
     </button>
 
-    <!-- JavaScript Libraries con carga diferida -->
+    <!-- ⚡ JAVASCRIPT OPTIMIZADO - CARGA AL FINAL -->
+    
+    <!-- 🚀 BOOTSTRAP JS MÍNIMO (Solo lo esencial) -->
     <script>
-        // Cargar JavaScript de forma asíncrona para mejor rendimiento
-        function loadScript(src, callback) {
+        // Cargar Bootstrap JS de forma diferida
+        function loadBootstrapJS() {
             const script = document.createElement('script');
-            script.src = src;
+            script.src = 'https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js';
             script.defer = true;
-            if (callback) script.onload = callback;
             document.head.appendChild(script);
         }
-
-        // Cargar scripts después de que el DOM esté listo
+        
+        // Cargar después de que el DOM esté listo
         document.addEventListener('DOMContentLoaded', function() {
-            // Cargar Bootstrap
-            loadScript('https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js');
-            
-            // Cargar AOS después de Bootstrap
-            loadScript('https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js', function() {
-                // Inicializar AOS cuando se cargue
-                if (typeof AOS !== 'undefined') {
-                    AOS.init({
-                        duration: 800,
-                        easing: 'ease-in-out',
-                        once: true,
-                        offset: 100
-                    });
-                }
-            });
+            loadBootstrapJS();
         });
     </script>
 
-    <!-- Custom JavaScript -->
+    <!-- ❌ ELIMINADO: AOS JS (Reemplazado por animaciones CSS nativas) -->
+    
+    <!-- TU JAVASCRIPT PRINCIPAL -->
     <script src="./js/main.js" defer></script>
 
     <!-- Service Worker para PWA -->
@@ -774,29 +612,35 @@
             window.addEventListener('load', function() {
                 navigator.serviceWorker.register('./sw.js')
                     .then(function(registration) {
-                        console.log('SW registered: ', registration);
+                        console.log('✅ SW registered: ', registration);
                     })
                     .catch(function(registrationError) {
-                        console.log('SW registration failed: ', registrationError);
+                        console.log('❌ SW registration failed: ', registrationError);
                     });
             });
         }
     </script>
 
-    <!-- Performance monitoring (opcional) -->
+    <!-- Performance monitoring -->
     <script>
-        // Medir rendimiento
         window.addEventListener('load', function() {
             setTimeout(function() {
-                const perfData = performance.getEntriesByType('navigation')[0];
-                const loadTime = perfData.loadEventEnd - perfData.fetchStart;
-                console.log(`⚡ Tiempo total de carga: ${loadTime}ms`);
-                
-                // Si es menor a 3 segundos, mostrar mensaje de éxito
-                if (loadTime < 3000) {
-                    console.log('🚀 ¡Excelente! Tu portafolio carga súper rápido');
+                if (performance && performance.getEntriesByType) {
+                    const perfData = performance.getEntriesByType('navigation')[0];
+                    if (perfData) {
+                        const loadTime = perfData.loadEventEnd - perfData.fetchStart;
+                        console.log(`⚡ Tiempo total de carga: ${Math.round(loadTime)}ms`);
+                        
+                        if (loadTime < 3000) {
+                            console.log('🚀 ¡Excelente! Carga rápida optimizada');
+                        } else if (loadTime < 5000) {
+                            console.log('✅ Buena velocidad de carga');
+                        } else {
+                            console.log('⚠️ Aún puede mejorar la velocidad');
+                        }
+                    }
                 }
-            }, 0);
+            }, 100);
         });
     </script>
 </body>
