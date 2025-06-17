@@ -1151,9 +1151,9 @@ html {
     scrollbar-color: var(--color-primary) var(--color-bg-secondary);
 }
 
-
-/* 👈 AGREGAR ESTAS LÍNEAS AL FINAL DEL ARCHIVO */
 /* ========== TURQUOISE TEXT ========== */
 .text-turquoise {
     color: var(--color-turquoise) !important;
 }
+
+

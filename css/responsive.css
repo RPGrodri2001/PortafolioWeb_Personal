@@ -1014,3 +1014,228 @@
         min-height: 100dvh;
     }
 }
+
+
+
+
+
+
+
+
+
+/* ===============================
+   OPTIMIZACIONES RESPONSIVE
+   Agregar al final de responsive.css
+   =============================== */
+
+/* Optimizaciones para móviles pequeños */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .section {
+        padding: 40px 0;
+    }
+    
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .btn-primary, .btn-secondary {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    
+    /* Optimizar imagen de perfil en móvil */
+    .profile-img {
+        width: 200px;
+        height: 200px;
+    }
+    
+    /* Texto más pequeño en móvil */
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Optimizaciones para tablets */
+@media (min-width: 481px) and (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .skills-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .container {
+        padding: 0 20px;
+    }
+}
+
+/* Optimizaciones para pantallas medianas */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+    
+    .skills-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .section {
+        padding: 60px 0;
+    }
+}
+
+/* Optimizaciones para pantallas grandes */
+@media (min-width: 1025px) {
+    .projects-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .skills-grid {
+        grid-template-columns: repeat(6, 1fr);
+    }
+    
+    .section {
+        padding: 80px 0;
+    }
+    
+    /* Parallax effect en pantallas grandes */
+    .hero {
+        background-attachment: fixed;
+    }
+}
+
+/* Optimizaciones para pantallas extra grandes */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1320px;
+    }
+    
+    .projects-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Optimizaciones para orientación landscape en móviles */
+@media (max-height: 600px) and (orientation: landscape) {
+    .hero {
+        min-height: 100vh;
+        padding: 2rem 0;
+    }
+    
+    .section {
+        padding: 30px 0;
+    }
+}
+
+/* Optimizaciones para impresión */
+@media print {
+    .preloader,
+    .header,
+    .btn-primary,
+    .btn-secondary {
+        display: none !important;
+    }
+    
+    body {
+        color: #000 !important;
+        background: #fff !important;
+    }
+    
+    .section {
+        page-break-inside: avoid;
+        margin: 1rem 0;
+    }
+}
+
+/* Optimizaciones para reducir movimiento */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    
+    .preloader {
+        display: none !important;
+    }
+}
+
+/* Optimizaciones para alto contraste */
+@media (prefers-contrast: high) {
+    .btn-primary,
+    .btn-secondary {
+        border: 2px solid;
+    }
+    
+    .project-card {
+        border: 2px solid var(--text-primary);
+    }
+}
+
+/* Optimizaciones de contenedor fluido */
+.container-fluid {
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+/* Grid system optimizado */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+}
+
+.col {
+    flex: 1;
+    padding: 0 15px;
+}
+
+.col-12 { flex: 0 0 100%; max-width: 100%; }
+.col-11 { flex: 0 0 91.66667%; max-width: 91.66667%; }
+.col-10 { flex: 0 0 83.33333%; max-width: 83.33333%; }
+.col-9 { flex: 0 0 75%; max-width: 75%; }
+.col-8 { flex: 0 0 66.66667%; max-width: 66.66667%; }
+.col-6 { flex: 0 0 50%; max-width: 50%; }
+.col-4 { flex: 0 0 33.33333%; max-width: 33.33333%; }
+.col-3 { flex: 0 0 25%; max-width: 25%; }
+
+/* Responsive para el grid */
+@media (max-width: 768px) {
+    .col-md-12 { flex: 0 0 100%; max-width: 100%; }
+    .col-md-6 { flex: 0 0 50%; max-width: 50%; }
+    .col-md-4 { flex: 0 0 33.33333%; max-width: 33.33333%; }
+    .col-md-3 { flex: 0 0 25%; max-width: 25%; }
+}
+
+@media (max-width: 576px) {
+    .col-sm-12 { flex: 0 0 100%; max-width: 100%; }
+    
+    .row {
+        margin: 0 -10px;
+    }
+    
+    .col {
+        padding: 0 10px;
+    }
+}

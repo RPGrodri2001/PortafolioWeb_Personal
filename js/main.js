@@ -1,3 +1,273 @@
+// ===============================
+// OPTIMIZACIONES DE RENDIMIENTO
+// Agregar al INICIO de main.js
+// ===============================
+
+// 1. VARIABLES GLOBALES
+let lastScrollTop = 0;
+const body = document.body;
+const header = document.querySelector('.header');
+
+// 2. INICIALIZACIÓN CUANDO EL DOM ESTÁ LISTO
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('🚀 Portafolio cargando...');
+    
+    // Inicializar todas las optimizaciones
+    initPreloader();
+    initLazyLoading();
+    initScrollAnimations();
+    initImageOptimization();
+    initSmoothScroll();
+    initHeaderBehavior();
+    
+    console.log('✅ Todas las optimizaciones iniciadas');
+});
+
+// 3. PRELOADER
+function initPreloader() {
+    const preloader = document.querySelector('.preloader');
+    
+    // Simular tiempo de carga mínimo para una mejor UX
+    setTimeout(() => {
+        if (preloader) {
+            preloader.classList.add('hidden');
+            console.log('✅ Preloader oculto');
+        }
+    }, 1500); // 1.5 segundos
+    
+    // También ocultar cuando todo esté completamente cargado
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            if (preloader) {
+                preloader.classList.add('hidden');
+            }
+        }, 500);
+    });
+}
+
+// 4. LAZY LOADING PARA ELEMENTOS
+function initLazyLoading() {
+    const lazyElements = document.querySelectorAll('.loading');
+    
+    if (lazyElements.length === 0) return;
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Agregar un pequeño delay para efecto escalonado
+                setTimeout(() => {
+                    entry.target.classList.add('loaded');
+                    entry.target.classList.remove('loading');
+                }, 100);
+                
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '50px 0px -50px 0px'
+    });
+    
+    lazyElements.forEach((el, index) => {
+        // Delay escalonado para múltiples elementos
+        setTimeout(() => {
+            observer.observe(el);
+        }, index * 100);
+    });
+    
+    console.log(`✅ Lazy loading iniciado para ${lazyElements.length} elementos`);
+}
+
+// 5. ANIMACIONES DE SCROLL
+function initScrollAnimations() {
+    const animatedElements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right');
+    
+    if (animatedElements.length === 0) return;
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.classList.add('show');
+                }, 100);
+            }
+        });
+    }, {
+        threshold: 0.2,
+        rootMargin: '0px 0px -100px 0px'
+    });
+    
+    animatedElements.forEach(el => observer.observe(el));
+    console.log(`✅ Animaciones de scroll para ${animatedElements.length} elementos`);
+}
+
+// 6. OPTIMIZACIÓN DE IMÁGENES
+function initImageOptimization() {
+    const images = document.querySelectorAll('img');
+    let loadedImages = 0;
+    
+    images.forEach(img => {
+        // Si la imagen ya está cargada
+        if (img.complete) {
+            handleImageLoad(img);
+            loadedImages++;
+        } else {
+            // Agregar listeners para carga
+            img.addEventListener('load', () => {
+                handleImageLoad(img);
+                loadedImages++;
+                console.log(`📸 Imagen cargada: ${loadedImages}/${images.length}`);
+            });
+            
+            img.addEventListener('error', () => {
+                handleImageError(img);
+                loadedImages++;
+                console.log(`❌ Error al cargar imagen: ${img.src}`);
+            });
+        }
+    });
+    
+    console.log(`✅ Optimización iniciada para ${images.length} imágenes`);
+}
+
+function handleImageLoad(img) {
+    img.classList.remove('loading');
+    img.classList.add('loaded');
+    
+    // Agregar efecto de aparición suave
+    img.style.opacity = '0';
+    img.style.transition = 'opacity 0.3s ease';
+    
+    setTimeout(() => {
+        img.style.opacity = '1';
+    }, 100);
+}
+
+function handleImageError(img) {
+    // Imagen placeholder en caso de error
+    img.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDMwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIiBmaWxsPSIjRjNGNEY2Ii8+CjxwYXRoIGQ9Ik0xNTAgMTAwQzEyNy45IDEwMCAxMTAgMTE3LjkgMTEwIDE0MEMxMTAgMTYyLjEgMTI3LjkgMTgwIDE1MCAxODBDMTcyLjEgMTgwIDE5MCAxNjIuMSAxOTAgMTQwQzE5MCAxMTcuOSAxNzIuMSAxMDAgMTUwIDEwMFoiIGZpbGw9IiM5Q0E0QUYiLz4KPC9zdmc+';
+    img.alt = 'Imagen no disponible';
+}
+
+// 7. SMOOTH SCROLL MEJORADO
+function initSmoothScroll() {
+    // Para enlaces de navegación
+    const navLinks = document.querySelectorAll('a[href^="#"]');
+    
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            
+            if (targetElement) {
+                const headerHeight = header ? header.offsetHeight : 0;
+                const targetPosition = targetElement.offsetTop - headerHeight - 20;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+    
+    console.log(`✅ Smooth scroll para ${navLinks.length} enlaces`);
+}
+
+// 8. COMPORTAMIENTO DEL HEADER
+function initHeaderBehavior() {
+    if (!header) return;
+    
+    const throttledScroll = throttle(() => {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        // Mostrar/ocultar header basado en dirección de scroll
+        if (scrollTop > lastScrollTop && scrollTop > 100) {
+            // Scrolling hacia abajo
+            header.classList.add('hidden');
+        } else {
+            // Scrolling hacia arriba
+            header.classList.remove('hidden');
+        }
+        
+        // Cambiar opacidad basado en scroll
+        if (scrollTop > 50) {
+            header.style.background = 'rgba(15, 15, 15, 0.95)';
+        } else {
+            header.style.background = 'rgba(15, 15, 15, 0.9)';
+        }
+        
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    }, 10);
+    
+    window.addEventListener('scroll', throttledScroll);
+    console.log('✅ Comportamiento del header iniciado');
+}
+
+// 9. THROTTLE FUNCTION (optimizar eventos)
+function throttle(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
+// 10. DEBOUNCE FUNCTION (optimizar resize)
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
+// 11. OPTIMIZACIÓN PARA RESIZE
+window.addEventListener('resize', debounce(() => {
+    // Recalcular posiciones si es necesario
+    console.log('🔄 Ventana redimensionada');
+}, 250));
+
+// 12. UTILIDADES ADICIONALES
+function showElement(element, animation = 'fade-in') {
+    element.classList.add(animation);
+    setTimeout(() => {
+        element.classList.add('show');
+    }, 100);
+}
+
+function hideElement(element) {
+    element.classList.remove('show');
+}
+
+// Exportar funciones útiles al scope global
+window.portfolioUtils = {
+    showElement,
+    hideElement,
+    throttle,
+    debounce
+};
+
+console.log('🎉 Optimizaciones de rendimiento cargadas correctamente');
+
+
+
+
+
+
+
+
+
 /* ================================
    MAIN JAVASCRIPT
    Funcionalidad principal del portafolio
