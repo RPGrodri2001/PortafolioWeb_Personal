@@ -51,49 +51,48 @@
 
     <!-- CSS crítico inline para evitar FOUC -->
     <style>
-        
         .loading-screen.hidden {
             opacity: 0;
             pointer-events: none;
         }
-                
+
         @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
         }
-        
     </style>
 
     <!-- ⚡ FONTS OPTIMIZADAS (CARGA DIFERIDA) -->
-    <link rel="preload" 
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" 
-          as="style" 
-          onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" 
-              rel="stylesheet">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+            rel="stylesheet">
     </noscript>
 
     <!-- 📦 BOOTSTRAP MÍNIMO (SOLO CSS, SIN JS PESADO) -->
-    <link rel="preload" 
-          href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" 
-          as="style" 
-          onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
     <noscript>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
     </noscript>
 
     <!-- 🎯 ICONOS ESENCIALES (SOLO LOS QUE USAS) -->
-    <link rel="preload" 
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" 
-          as="style" 
-          onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
     <noscript>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
     </noscript>
 
     <!-- ❌ ELIMINADO: AOS (demasiado pesado, lo reemplazaremos con CSS) -->
-    
+
     <!-- TUS CSS ORIGINALES -->
     <link rel="stylesheet" href="./css/variables.css">
     <link rel="stylesheet" href="./css/components.css">
@@ -183,13 +182,13 @@
                 <div class="col-lg-6 text-center">
                     <div class="profile-container" data-aos="zoom-in" data-aos-delay="500">
                         <div class="profile-glow" aria-hidden="true"></div>
-                        <img src="./imagen/FotoCV.png" 
-                             alt="Gino Rodriguez - Desarrollador Full Stack" 
-                             class="profile-img"
-                             loading="eager"
-                             width="300"
-                             height="300"
-                             decoding="async">
+
+                        <picture>
+                            <source srcset="./imagen/FotoCV.webp" type="image/webp">
+                            <img src="./imagen/FotoCV-optimizada.png" alt="Gino Rodriguez - Desarrollador Full Stack"
+                                class="profile-img" loading="lazy" width="300" height="300" decoding="async">
+                        </picture>
+
                     </div>
                 </div>
             </div>
@@ -464,7 +463,8 @@
                             <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
                         </div>
                         <div class="project-content">
-                            <h3 class="project-title">Aplicación web con Geolocalización en tiempo real con Mapa GPS</h3>
+                            <h3 class="project-title">Aplicación web con Geolocalización en tiempo real con Mapa GPS
+                            </h3>
                             <p class="project-description">
                                 Se realiza un sistema para ver la ubicación en tiempo real con ayuda de 6 APIs
                                 implementadas
@@ -481,7 +481,8 @@
                                 <a href="https://rpgrodri2001.github.io/Ubicacion_TiempoReal/"
                                     class="btn-project btn-demo" target="_blank" rel="noopener noreferrer"
                                     aria-label="Ver demo de la aplicación de geolocalización">Ver Demo</a>
-                                <a href="https://github.com/RPGrodri2001/Ubicacion_TiempoReal" class="btn-project btn-code" target="_blank" rel="noopener noreferrer"
+                                <a href="https://github.com/RPGrodri2001/Ubicacion_TiempoReal"
+                                    class="btn-project btn-code" target="_blank" rel="noopener noreferrer"
                                     aria-label="Ver código de la aplicación de geolocalización">Código</a>
                             </div>
                         </div>
@@ -584,7 +585,7 @@
     </button>
 
     <!-- ⚡ JAVASCRIPT OPTIMIZADO - CARGA AL FINAL -->
-    
+
     <!-- 🚀 BOOTSTRAP JS MÍNIMO (Solo lo esencial) -->
     <script>
         // Cargar Bootstrap JS de forma diferida
@@ -594,27 +595,27 @@
             script.defer = true;
             document.head.appendChild(script);
         }
-        
+
         // Cargar después de que el DOM esté listo
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             loadBootstrapJS();
         });
     </script>
 
     <!-- ❌ ELIMINADO: AOS JS (Reemplazado por animaciones CSS nativas) -->
-    
+
     <!-- TU JAVASCRIPT PRINCIPAL -->
     <script src="./js/main.js" defer></script>
 
     <!-- Service Worker para PWA -->
     <script>
         if ('serviceWorker' in navigator) {
-            window.addEventListener('load', function() {
+            window.addEventListener('load', function () {
                 navigator.serviceWorker.register('./sw.js')
-                    .then(function(registration) {
+                    .then(function (registration) {
                         console.log('✅ SW registered: ', registration);
                     })
-                    .catch(function(registrationError) {
+                    .catch(function (registrationError) {
                         console.log('❌ SW registration failed: ', registrationError);
                     });
             });
@@ -623,14 +624,14 @@
 
     <!-- Performance monitoring -->
     <script>
-        window.addEventListener('load', function() {
-            setTimeout(function() {
+        window.addEventListener('load', function () {
+            setTimeout(function () {
                 if (performance && performance.getEntriesByType) {
                     const perfData = performance.getEntriesByType('navigation')[0];
                     if (perfData) {
                         const loadTime = perfData.loadEventEnd - perfData.fetchStart;
                         console.log(`⚡ Tiempo total de carga: ${Math.round(loadTime)}ms`);
-                        
+
                         if (loadTime < 3000) {
                             console.log('🚀 ¡Excelente! Carga rápida optimizada');
                         } else if (loadTime < 5000) {
